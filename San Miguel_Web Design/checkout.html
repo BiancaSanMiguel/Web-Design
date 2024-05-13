@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Vinyl Haven|Checkout Page</title>
+    <link rel="stylesheet" href="style.css">
+    <link href="https://fonts.googleapis.com/css2?family=Kanit:wght@500&display=swap" rel="stylesheet">
+    <style>
+         body {
+            font-family: 'Kanit', sans-serif;
+            background-color: #ECE3CE;
+            margin: 0;
+            padding: 0;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+        }
+    </style>
+</head>
+<body>
+
+<div class="checkout-container2">
+    <h2>Checkout</h2>
+    <form class="checkout-form" onsubmit="showPopup(); return false;">
+        <div class="form-group">
+            <label for="name">Name:</label>
+            <input type="text" id="name" name="name" required>
+        </div>
+
+        <div class="form-group">
+            <label for="email">Email:</label>
+            <input type="email" id="email" name="email" required>
+        </div>
+
+        <div class="form-group">
+            <label for="address">Address:</label>
+            <input type="text" id="address" name="address" required>
+        </div>
+
+        <div class="form-group">
+            <label for="card">Credit Card Number:</label>
+            <input type="text" id="card" name="card" required>
+        </div>
+
+        <button type="submit">Place Order</button>
+    </form>
+</div>
+
+<!------ popup mess ------>
+<div id="popup" class="popup">
+    <p>Thank you for your order!</p>
+    <button onclick="hidePopup()">Close</button>
+    <a href="index.html"><button onclick="hidePopup()">Back to Home</button></a>
+</div>
+
+<!-------- overlay popup ------->
+<div id="overlay" class="overlay"></div>
+
+<script>
+    function showPopup() {
+        document.getElementById('popup').style.display = 'block';
+        document.getElementById('overlay').style.display = 'block';
+    }
+
+    function hidePopup() {
+        document.getElementById('popup').style.display = 'none';
+        document.getElementById('overlay').style.display = 'none';
+    }
+</script>
+
+</body>
+</html>
